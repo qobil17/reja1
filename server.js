@@ -1,5 +1,6 @@
 console.log("Web serverni boshlash");
 const express = require("express");
+const res = require("express/lib/response");
 const app = express();
 const http = require("http");
 
@@ -16,13 +17,13 @@ app.set("views", "views");
 app.set("view engine", "ejs");
 
 //4 Routing code
-app.get("/hello", function (req, res) {
-  res.end("<h1>Hello World by Joseph</h1>");
+app.post("/creat-item", (req, res) => {
+  console.log(req.body);
+  res.json({ test: "succes" });
 });
-app.get("/gift", function (req, res) {
-  res.end("<h1>Siz sovg'alar sahifasidasiz</h1>");
+app.get("/", function (req, res) {
+  res.render("harid");
 });
-
 const server = http.createServer(app);
 let PORT = 3000;
 server.listen(PORT, function () {
