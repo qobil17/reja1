@@ -2,7 +2,7 @@ console.log("Web serverni boshlash");
 const express = require("express");
 const res = require("express/lib/response");
 const app = express();
-const http = require("http");
+
 const fs = require("fs");
 
 let user;
@@ -13,6 +13,8 @@ fs.readFile("database/user.json", "utf8", (err, data) => {
     user = JSON.parse(data);
   }
 });
+
+//MongoDB connect
 
 //1 Kirish code
 
@@ -40,10 +42,5 @@ app.get("/author", (req, res) => {
 app.get("/", function (req, res) {
   res.render("reja1");
 });
-const server = http.createServer(app);
-let PORT = 3000;
-server.listen(PORT, function () {
-  console.log(
-    `The server is runing seccessfully on port: ${PORT}, http://localhost:${PORT}`
-  );
-});
+
+module.exports = app;
