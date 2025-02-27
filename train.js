@@ -94,8 +94,14 @@
 // }
 // run();
 
-function countLetter(letter, word) {
+// A-TASK
+//Assalomu alaykum
+
+//Shunday 2 parametrli function tuzing, hamda birinchi parametrdagi letterni ikkinchi parametrdagi sozdan qatnashga sonini return qilishi kerak boladi.
+
+//MASALANI YECHIMI
+/*function countLetter(letter, word) {
   return word.split(letter).length - 1;
 }
 
-console.log(countLetter("e", "engineere"));
+console.log(countLetter("e", "engineere"));*/
