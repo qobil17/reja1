@@ -94,6 +94,15 @@
 // }
 // run();
 
+//B-TASK
+
+//Shunday function tuzing, u 1ta string parametrga ega bolsin, hamda osha stringda qatnashgan raqamlarni sonini bizga return qilsin.
+
+/*function countDigits(str) {
+  return [...str].filter((char) => char >= "0" && char <= "9").length;
+}
+console.log(countDigits("dj4lnt5oi634n64noi54n"));*/
+
 // A-TASK
 //Assalomu alaykum
 
