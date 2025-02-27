@@ -50,14 +50,27 @@ async function maslahatBering(a) {
   else if (a > 50 && a <= 60) return list[4];
   else {
     return list[5];
+
+    //     return new Promise((resolve, reject) => {
+    //       // promise function da set time out va set interval yaxshi ishlaydi//
+    //       setTimeout(() => {
+    //         resolve(list[5]);
+    //       }, 5000);
+    //     });
+
     //  setTimeout(() => {
     //    resolve(list[5]);
     //  }, 5000);
   }
 }
+//SET INTERVAL
+// return new Promise((resolve, reject) => {
+//       setInterval(() => {
+//         resolve(list[5]);
+//       }, 1000);
+//     });
 
-// then/catch
-
+// THEN/CATCH
 // console.log("passed here 0");
 // maslahatBering(25)
 //   .then((data) => {
@@ -80,36 +93,3 @@ async function run() {
   console.log(javob);
 }
 run();
-
-// set timeout//
-
-//     return new Promise((resolve, reject) => {
-//       // promise function da set time out va set interval yaxshi ishlaydi//
-//       setTimeout(() => {
-//         resolve(list[5]);
-//       }, 5000);
-//     });
-
-//     //set intervall//
-
-//     return new Promise((resolve, reject) => {
-//       setInterval(() => {
-//         resolve(list[5]);
-//       }, 1000);
-//     });
-//   }
-// }
-
-//  call via then/catch//
-
-// console.log("passed here 0");
-// maslahatBering(25)
-//   .then((data) => {
-//     console.log("javob:", data);
-//   })
-//   .catch((err) => {
-//     console.log("ERROR:", err);
-//   });
-// console.log("passed here 1");
-
-// call via async & await //
