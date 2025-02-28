@@ -14,7 +14,9 @@ fs.readFile("database/user.json", "utf8", (err, data) => {
   }
 });
 
-//MongoDB connect
+//MongoDB chaqirvolamiz
+
+const db = require("./server").db();
 
 //1 Kirish code
 
@@ -30,17 +32,32 @@ app.set("view engine", "ejs");
 
 //4 Routing code
 app.post("/create-item", (req, res) => {
-  //console.log(req.body);
+  console.log("user entered /create-item");
+  const new_reja1 = req.body.reja1;
+  db.collection("plans").insertOne({ reja1: new_reja1 }, (err, data) => {
+    if (err) {
+      console.log(err);
+      res.end("something went wrong");
+    } else {
+      res.end("successfully added");
+    }
+  });
   //res.json({ test: "succes" });
   //TODO code with db here
 });
 
-app.get("/author", (req, res) => {
-  res.render("author", { user: user });
-});
-
 app.get("/", function (req, res) {
-  res.render("reja1");
+  console.log("user entered /");
+  db.collection("plans")
+    .find()
+    .toArray((err, data) => {
+      if (err) {
+        console.log(err);
+        res.end("something went wrong1");
+      } else {
+        res.render("reja1", { items: data });
+      }
+    });
 });
 
 module.exports = app;
