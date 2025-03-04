@@ -94,6 +94,55 @@
 // }
 // run();
 
+class Shop {
+  constructor(non, lagmon, cola) {
+    this.ombor = {
+      non: non,
+      lagmon: lagmon,
+      cola: cola,
+    };
+  }
+
+  hozirgiVaqt() {
+    return new Date().toLocaleTimeString("uz-UZ", {
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+  }
+
+  qoldiq() {
+    const vaqt = this.hozirgiVaqt();
+    return `Hozir ${vaqt}da ${this.ombor.non}ta non, ${this.ombor.lagmon}ta lagmon va ${this.ombor.cola}ta cola mavjud!`;
+  }
+
+  sotish(mahsulot, miqdor) {
+    const vaqt = this.hozirgiVaqt();
+    if (this.ombor[mahsulot] !== undefined && this.ombor[mahsulot] >= miqdor) {
+      this.ombor[mahsulot] -= miqdor;
+      console.log(`Hozir ${vaqt}da ${miqdor}ta ${mahsulot} sotildi.`);
+    } else {
+      console.log(`Hozir ${vaqt}da yetarlicha ${mahsulot} yo'q.`);
+    }
+  }
+
+  qabul(mahsulot, miqdor) {
+    const vaqt = this.hozirgiVaqt();
+    if (this.ombor[mahsulot] !== undefined) {
+      this.ombor[mahsulot] += miqdor;
+      console.log(`Hozir ${vaqt}da ${miqdor}ta ${mahsulot} qabul qilindi.`);
+    } else {
+      console.log(`Hozir ${vaqt}da noma’lum mahsulot: ${mahsulot}.`);
+    }
+  }
+}
+
+// Namuna:
+const shop = new Shop(4, 5, 2);
+console.log(shop.qoldiq());
+shop.sotish("non", 3);
+shop.qabul("cola", 4);
+console.log(shop.qoldiq());
+
 //B-TASK
 
 //Shunday function tuzing, u 1ta string parametrga ega bolsin, hamda osha stringda qatnashgan raqamlarni sonini bizga return qilsin.
