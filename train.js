@@ -94,6 +94,8 @@
 // }
 // run();
 
+// C-TASK
+
 class Shop {
   constructor(non, lagmon, cola) {
     this.ombor = {
