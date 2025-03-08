@@ -94,12 +94,21 @@
 // }
 // run();
 
-function checkContent(a, b) {
-  const first = [...a].sort().join("");
-  const second = [...b].sort().join("");
-  console.log(first === second);
+//E-TASK
+
+function getReverse(str) {
+  return str.split("").reverse().join("");
 }
-checkContent("mitgroup", "timroupg");
+console.log(getReverse("hello"));
+
+//D-TASK
+
+// function checkContent(a, b) {
+//   const first = [...a].sort().join("");
+//   const second = [...b].sort().join("");
+//   console.log(first === second);
+// }
+// checkContent("mitgroup", "timroupg");
 
 // C-TASK
 
