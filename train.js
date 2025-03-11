@@ -94,12 +94,26 @@
 // }
 // run();
 
+// F-TASK
+
+function findDoublers(str) {
+  for (let i = 0; i < str.length - 1; i++) {
+    if (str[i] === str[i + 1]) {
+      return true;
+    }
+  }
+  return false;
+}
+
+console.log(findDoublers("hello")); // true, chunki "ll" mavjud
+console.log(findDoublers("world")); // false
+
 //E-TASK
 
-function getReverse(str) {
-  return str.split("").reverse().join("");
-}
-console.log(getReverse("hello"));
+// function getReverse(str) {
+//   return str.split("").reverse().join("");
+// }
+// console.log(getReverse("hello"));
 
 //D-TASK
 
